@@ -8,10 +8,18 @@ def pigLatin(input)
 	if (txtArray[0] =~ /[aeiou]/)
 		input += "way"
 	else
-		while true 
-			break if txtArray[0] =~/[aeiouy]/
-			txtArray.push(txtArray[0])
-			txtArray.shift
+		if(txtArray[0] =~ /[y]/)
+			while true
+				break if txtArray[0] =~/[aeiou]/
+				txtArray.push(txtArray[0])
+				txtArray.shift
+			end
+		else
+			while true
+				break if txtArray[0] =~/[aeiouy]/
+				txtArray.push(txtArray[0])
+				txtArray.shift
+			end
 		end
 		puts "shifting consonants to the back #{txtArray} then adding ay"
 		output = txtArray.join("")

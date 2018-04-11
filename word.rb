@@ -14,6 +14,12 @@ def pigLatin(input)
 				txtArray.push(txtArray[0])
 				txtArray.shift
 			end
+		elsif (txtArray[0] =~ /[qs]/)
+			while true
+				break if txtArray[0] =~/[aeio]/
+				txtArray.push(txtArray[0])
+				txtArray.shift
+			end
 		else
 			while true
 				break if txtArray[0] =~/[aeiouy]/
